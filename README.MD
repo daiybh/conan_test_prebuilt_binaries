@@ -38,20 +38,30 @@ at this point , you will have the following files
 
 Use the Conan official example  "[Prebuild_binaries](https://github.com/conan-io/examples2/tree/main/tutorial/creating_packages/other_packages/prebuilt_binaries)" as a template
 
+if this package name is not same with the library name, you should change the library name to the package name
+
+currect package name named "slc-myhellolib"
+
+so the libnary name should be 
+
+* in macos "libslc-myhellolib.a"
+
+* in windows "slc-myhellolib.lib"
+
 ### Modify the  "conanfile.py" file:
 
 ```python
-name = "myhellolib"
+name = "slc-myhellolib"
 version = "0.3"
 
-self.cpp_info.libs = ["myhellolib"]
+self.cpp_info.libs = ["slc-myhellolib"]
 ```
 
 ### Copy the library files and header files
 
 **NOTICE  my test os is macos armv8, you should change it according to your os**
 
-* copy myhellolib/build/libmyhellolib.a to Prebuild_binaries/vendor_hello_library/macos/armv8/libmyhellolib.a
+* copy myhellolib/build/libmyhellolib.a to Prebuild_binaries/vendor_hello_library/macos/armv8/slc-libmyhellolib.a
 
 * copy myhellolib/include/myhellolib.h to Prebuild_binaries/vendor_hello_library/macos/armv8/include
 
@@ -75,8 +85,8 @@ conan export-pkg . -s os="Windows" -s arch="armv8"
 ### Verify the publication:
 
 ```sh
-conan list "myhellolib"
-conan list "myhellolib/0.3#:*"
+conan list "slc-myhellolib"
+conan list "slc-myhellolib/0.3#:*"
 ```
 
 ## 3. Create a Test Application **testApp**
@@ -94,13 +104,13 @@ conan new cmake_exe -d name=testApp -d version=1.0
 ``` python
 
 def requirements(self):
-    self.requires("myhellolib/0.3")
+    self.requires("slc-myhellolib/0.3")
 ```        
 2. Modify the CMakeLists.txt file to link myhellolib:
 
 ```cmake
-find_package(myhellolib)
-target_link_libraries(testApp PRIVATE myhellolib::myhellolib)
+find_package(slc-myhellolib)
+target_link_libraries(testApp PRIVATE slc-myhellolib::slc-myhellolib)
 ```
      
 3. Modify the src/main.cpp file to include the myhellolib header and call its function:

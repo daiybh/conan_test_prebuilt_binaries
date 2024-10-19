@@ -7,3 +7,4 @@ prebuilt_binaries/conanrunenv-x86_64.bat
 prebuilt_binaries/conanbuildenv-x86_64.bat
 prebuilt_binaries/conanbuild.bat
 .vscode/
+prebuilt_binaries/*.sh
