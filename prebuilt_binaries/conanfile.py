@@ -4,8 +4,8 @@ from conan.tools.files import copy
 
 
 class helloRecipe(ConanFile):
-    name = "myhellolib"
-    version = "0.3"
+    name = "slc-myhellolib"
+    version = "1.0"
     settings = "os", "arch"
 
     def layout(self):
@@ -24,4 +24,4 @@ class helloRecipe(ConanFile):
         copy(self, "*.a", local_lib_folder, os.path.join(self.package_folder, "lib"), keep_path=False)
 
     def package_info(self):
-        self.cpp_info.libs = ["myhellolib"]
+        self.cpp_info.libs = ["slc-myhellolib"]

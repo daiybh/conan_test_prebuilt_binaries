@@ -39,7 +39,7 @@ class testAppRecipe(ConanFile):
         cmake.install()
         
     def requirements(self):
-        self.requires("myhellolib/0.3")
+        self.requires("slc-myhellolib/1.0")
 
     
     
