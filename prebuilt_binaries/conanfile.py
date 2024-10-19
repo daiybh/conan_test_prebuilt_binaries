@@ -6,7 +6,7 @@ from conan.tools.files import copy
 class helloRecipe(ConanFile):
     name = "slc-myhellolib"
     version = "1.0"
-    settings = "os", "arch"
+    settings = "os", "compiler", "build_type", "arch"
 
     def layout(self):
         _os = str(self.settings.os).lower()

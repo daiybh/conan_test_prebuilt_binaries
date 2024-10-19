@@ -81,6 +81,8 @@ conan export-pkg . -s os="Macos" -s arch="armv8"
 conan export-pkg . -s os="Windows" -s arch="x86_64"
 conan export-pkg . -s os="Windows" -s arch="armv8"
 ```
+
+also  can  attend --build_type=Debug/Release  , that  can  with different  build type
     
 ### Verify the publication:
 
