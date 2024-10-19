@@ -4,11 +4,8 @@
 #include "myhellolib.h"
 int main() {
     myhellolib();
+
+    MyHelloLib lib;
+    lib.sayHello();
     return 0;
-    testApp();
-
-    std::vector<std::string> vec;
-    vec.push_back("test_package");
-
-    testApp_print_vector(vec);
 }

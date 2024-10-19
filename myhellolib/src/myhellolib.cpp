@@ -118,3 +118,9 @@ void myhellolib_print_vector(const std::vector<std::string> &strings) {
         std::cout << "myhellolib/1.0 " << *it << std::endl;
     }
 }
+
+
+void MyHelloLib::sayHello()
+{
+    std::cout << "Hello from class MyHelloLib!\n";
+}
