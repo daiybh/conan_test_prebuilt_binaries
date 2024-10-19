@@ -1,2 +1,9 @@
 build/
 CMakeUserPresets.json
+prebuilt_binaries/conanrun.bat
+prebuilt_binaries/deactivate_conanbuild.bat
+prebuilt_binaries/deactivate_conanrun.bat
+prebuilt_binaries/conanrunenv-x86_64.bat
+prebuilt_binaries/conanbuildenv-x86_64.bat
+prebuilt_binaries/conanbuild.bat
+.vscode/
