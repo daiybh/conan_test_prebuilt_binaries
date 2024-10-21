@@ -18,3 +18,9 @@ class MYHELLOLIB_EXPORT MyHelloLib
 public:
   void sayHello();
 };
+
+class MyHelloLibWithoutExport
+{
+public:
+  void sayHello2();
+};

@@ -124,3 +124,8 @@ void MyHelloLib::sayHello()
 {
     std::cout << "Hello from class MyHelloLib!\n";
 }
+
+void MyHelloLibWithoutExport::sayHello2()
+{
+    std::cout << "Hello from class MyHelloLibWithoutExport!\n";
+}
