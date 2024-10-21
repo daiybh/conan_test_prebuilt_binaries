@@ -24,4 +24,4 @@ class helloRecipe(ConanFile):
         copy(self, "*.a", local_lib_folder, os.path.join(self.package_folder, "lib"), keep_path=False)
 
     def package_info(self):
-        self.cpp_info.libs = ["slc-myhellolib"]
+        self.cpp_info.libs = ["myhellolib"]

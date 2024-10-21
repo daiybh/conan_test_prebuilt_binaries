@@ -38,30 +38,26 @@ at this point , you will have the following files
 
 Use the Conan official example  "[Prebuild_binaries](https://github.com/conan-io/examples2/tree/main/tutorial/creating_packages/other_packages/prebuilt_binaries)" as a template
 
-if this package name is not same with the library name, you should change the library name to the package name
 
 currect package name named "slc-myhellolib"
 
-so the libnary name should be 
-
-* in macos "libslc-myhellolib.a"
-
-* in windows "slc-myhellolib.lib"
 
 ### Modify the  "conanfile.py" file:
 
 ```python
 name = "slc-myhellolib"
 version = "0.3"
-
-self.cpp_info.libs = ["slc-myhellolib"]
+```
+here we need to add the library name
+```
+self.cpp_info.libs = ["myhellolib"]
 ```
 
 ### Copy the library files and header files
 
 **NOTICE  my test os is macos armv8, you should change it according to your os**
 
-* copy myhellolib/build/libmyhellolib.a to Prebuild_binaries/vendor_hello_library/macos/armv8/slc-libmyhellolib.a
+* copy myhellolib/build/libmyhellolib.a to Prebuild_binaries/vendor_hello_library/macos/armv8/libmyhellolib.a
 
 * copy myhellolib/include/myhellolib.h to Prebuild_binaries/vendor_hello_library/macos/armv8/include
 
